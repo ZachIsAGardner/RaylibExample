@@ -15,7 +15,7 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "setup-debug"
-            ]
+            ],
         },
         {
             "label": "publish",

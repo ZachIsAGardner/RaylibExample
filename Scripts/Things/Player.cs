@@ -8,6 +8,9 @@ public class Player : Thing
     public Sprite Sprite;
     public Collider Collider;
 
+    AnimationState idle = new AnimationState() { Start = 0 };
+    AnimationState walk = new AnimationState() { Start = 1, End = 4 };
+
     public Player()
     {
         Collider = (Collider)AddChild(new Collider()
@@ -40,6 +43,9 @@ public class Player : Thing
         if (Raylib.IsKeyDown(KeyboardKey.D)) input.X++;
 
         if (input.X != 0) Sprite.FlipHorizontally = input.X == -1;
+
+        if (input == Vector2.Zero) Sprite.State = idle;
+        else Sprite.State = walk;
 
         Position += input * speed * Time.Delta;
 

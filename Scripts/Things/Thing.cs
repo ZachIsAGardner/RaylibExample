@@ -30,17 +30,11 @@ public class Thing
 
     bool didStart;
 
-    public Thing() : this(null) { }
-    public Thing(string name = null, Vector2? position = null, float drawOrder = 0, float updateOrder = 0)
+    public Thing()
     {
         Id = id;
         id++;
         Game.Things.Add(this);
-
-        Name = name;
-        Position = position ?? Vector2.Zero;
-        DrawOrder = drawOrder;
-        UpdateOrder = updateOrder;
     }
 
     public virtual void Start()

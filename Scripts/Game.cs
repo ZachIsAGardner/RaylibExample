@@ -21,7 +21,6 @@ public static class Game
     {
         Start();
 
-        Raylib.SetExitKey(Raylib_cs.KeyboardKey.Null);
         while (!Raylib.WindowShouldClose())
         {
             Update();
@@ -33,6 +32,7 @@ public static class Game
 
     public static void Start()
     {
+        Raylib.SetExitKey(Raylib_cs.KeyboardKey.Null);
         Raylib.SetConfigFlags(ConfigFlags.ResizableWindow);
         Raylib.SetConfigFlags(ConfigFlags.VSyncHint);
         Raylib.InitWindow(480, 270, "RaylibExample");
